@@ -19,6 +19,12 @@ app.use(
 app.post("/mail", jsonParser, async (req, res) => {
   try {
     const { name, email, phone, website, message } = req.body;
+    if (!name || !email || !phone || !website || !message) {
+      res.status(400).json({
+        error: "Please provide all the required fields",
+      });
+    }
+    
     const data = await resend.emails.send({
       from: "Contact Form <contact@beeyondcreative.org>",
       to: ["abeeha@beeyondcreative.org"],
