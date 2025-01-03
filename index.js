@@ -12,7 +12,7 @@ const jsonParser = bodyParser.json();
 
 app.use(
   cors({
-    origin: "beeyondcreative.org",
+    origin: "https://beeyondcreative.org",
   })
 );
 
