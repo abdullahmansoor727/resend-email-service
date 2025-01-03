@@ -23,6 +23,7 @@ app.post("/mail", jsonParser, async (req, res) => {
       res.status(400).json({
         error: "Please provide all the required fields",
       });
+      return;
     }
     
     const data = await resend.emails.send({
