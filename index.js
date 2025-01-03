@@ -18,7 +18,6 @@ app.use(
 
 app.post("/mail", jsonParser, async (req, res) => {
   try {
-    console.log(req.body);
     const { name, email, phone, website, message } = req.body;
     const data = await resend.emails.send({
       from: "Contact Form <contact@beeyondcreative.org>",
@@ -62,3 +61,5 @@ app.listen(3000, () => {
 
   console.log("Listening on http://localhost:3000");
 });
+
+module.exports = app;
