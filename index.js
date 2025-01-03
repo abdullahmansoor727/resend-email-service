@@ -16,6 +16,8 @@ const limiter = rateLimit({
   max: 5, // limit each IP to 10 requests per windowMs
 });
 
+app.use(limiter);
+
 app.use(
   cors({
     origin: "https://beeyondcreative.org",
