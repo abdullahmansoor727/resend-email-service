@@ -1,7 +1,6 @@
 {
   "name": "resend-express-example",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "node index.js"
   },

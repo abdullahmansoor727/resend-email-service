@@ -1,8 +1,8 @@
-import { Resend } from "resend";
-import express from "express";
-import * as dotenv from "dotenv";
-import bodyParser from "body-parser";
-import cors from "cors";
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const { Resend } = require("resend");
 
 dotenv.config();
 
