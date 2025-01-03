@@ -3,12 +3,18 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const { Resend } = require("resend");
+const { rateLimit } = require("express-rate-limit");
 
 dotenv.config();
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const app = express();
 const jsonParser = bodyParser.json();
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5, // limit each IP to 10 requests per windowMs
+});
 
 app.use(
   cors({
